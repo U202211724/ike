@@ -1,0 +1,118 @@
+package ike1;
+import java.util.HashSet;
+import java.util.Set;
+
+public class Station {
+	
+	    String name;
+	    Set<String> lines;
+
+	    public Station(String name) {
+	        this.name = name;
+	        this.lines = new HashSet<>();
+	    }
+
+	    public void addLine(String line) {
+	        lines.add(line);
+	    }
+
+	    @Override
+	    public String toString() {
+	        return name + " " + lines;
+	    }
+	}
+
+package ike1;
+
+public class LineSegment {
+	String line;
+    Station from;
+    Station to;
+    double distance;
+
+    public LineSegment(String line, Station from, Station to, double distance) {
+        this.line = line;
+        this.from = from;
+        this.to = to;
+        this.distance = distance;
+    }
+
+    @Override
+    public String toString() {
+        return line + ": " + from.name + " -> " + to.name + " (" + distance + " km)";
+    }
+}
+
+package ike1;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.PriorityQueue;
+import java.util.Set;
+
+public class SubwaySystem {
+	Map<String, Station> stations;
+    List<LineSegment> lineSegments;
+public SubwaySystem(String filePath) throws IOException {
+        stations = new HashMap<>();
+        lineSegments = new ArrayList<>();
+        loadSubwayData(filePath);
+    }
+private void loadSubwayData(String filePath) throws IOException {
+private void addLineSegment(String line, String from, String to, double distance) {
+  public Set<Station> getTransferStations() {
+public Map<Station, Double> getNearbyStations(String stationName, double maxDistance) {
+    public List<List<Station>> getAllPaths(String startName, String endName) {
+private void findAllPaths(Station current, Station end, Set<Station> visited, List<Station> path, List<List<Station>> paths) {
+ public List<Station> getShortestPath(String startName, String endName) {
+public void printPath(List<Station> path) {
+public double calculateFare(List<Station> path) {
+public double calculateFareWithDiscount(List<Station> path, String ticketType) {
+
+package ike1;
+
+import java.io.IOException;
+import java.util.List;
+import java.util.Map;
+import java.util.Scanner;
+import java.util.Set;
+
+public class sci {
+	 public static void main(String[] args) {
+	        try {
+	            SubwaySystem subwaySystem = new SubwaySystem("C:\\Users\\86138\\Desktop\\大作业\\subway.txt");
+	            Scanner scanner = new Scanner(System.in);
+	            while (true) {
+	                System.out.println("请选择操作:");
+	                System.out.println("1. 识别地铁中转站");
+	                System.out.println("2. 查找附近站点");
+	                System.out.println("3. 查找所有路径");
+	                System.out.println("4. 查找最短路径");
+	                System.out.println("5. 计算乘车费用");
+	                System.out.println("6. 计算不同票种的票价");
+	                System.out.println("7. 退出");
+
+	                int choice = scanner.nextInt();
+	                scanner.nextLine(); // consume newline
+
+	                switch (choice) {
+case 1:
+case 2:
+case 3:
+case 4:
+case 5:
+case 6:
+case 7:
+
+
+
+
+
+

@@ -1,1 +1,20 @@
+package ike1;
 
+public class LineSegment {
+	String line;
+    Station from;
+    Station to;
+    double distance;
+
+    public LineSegment(String line, Station from, Station to, double distance) {
+        this.line = line;
+        this.from = from;
+        this.to = to;
+        this.distance = distance;
+    }
+
+    @Override
+    public String toString() {
+        return line + ": " + from.name + " -> " + to.name + " (" + distance + " km)";
+    }
+}
